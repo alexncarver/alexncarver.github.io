@@ -1,7 +1,162 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello world</h1>
-<p>I'm hosted with GitHub pages!</p>
-</body>
+	<head>
+		<title>TASMIN BP</title>
+		<style>
+			#header {
+				margin:auto;
+			    position: relative;
+			    width:522px;
+			    top: -10px;
+			    background-color: #00A0B0;
+			    border-top-left-radius: 15px;
+			    border-top-right-radius: 15px;
+				height: 40px;
+			}
+
+			h1 {
+			    font-family: Helvetica, Arial, sans-serif;
+			    color: #FFFFFF;
+			    text-align: center;
+			}
+
+
+			p {
+			    font-family: Helvetica, Arial, sans-serif;
+			    display: inline-block;
+			}
+
+			input {
+			    font-family: Helvetica, Arial, sans-serif;
+			}
+
+
+			.wrapper {
+				margin:auto;
+				width:500px;
+			    border-left: 1px solid #888;
+			    border-right: 1px solid #888;
+			    border-bottom: 1px solid #888;
+			    position: relative;
+			    top: -10px;
+			    padding-top: 10px;
+			    padding-left: 20px;
+			    padding-bottom: 20px;
+			    box-shadow: 3px 3px 3px #444;
+			    font-family: Helvetica, Arial, sans-serif;
+			    font-size: 0.8em;
+			    text-align: center;
+			}
+
+			#inputs {
+				margin:auto;
+				width: 200px;
+				clear: both;
+			}
+
+			#inputs input {
+				width: 100%;
+				clear: both;
+			}
+
+			/*#response_wrapper {
+				margin-left:0px;
+			}*/
+
+			#response {
+				/*margin-left: 20px;*/
+				margin-right: 20px;
+				border-radius: 2px;
+				border-top: 1px solid #888;
+			    border-left: 1px solid #888;
+			    border-right: 1px solid #888;
+			    border-bottom: 1px solid #888;
+			    border-radius:5px;
+			    position: relative;
+			    padding-top: 10px;			    
+			    padding-bottom: 20px;
+			    box-shadow: 3px 3px 3px #444;
+			    font-family: Helvetica, Arial, sans-serif;
+			    font-size: 2em;
+			    text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="header"><h1>TASMIN BP</h1></div>
+		<div class="wrapper">
+			<div id='inputs'>
+				Please enter your SYS value:<input type='text' id='SYS1'>
+				<br>
+				Please enter your DIA value:<input type='text' id='DIA1'>
+				<button type="button" onclick="myFunction1()">Submit</button>
+			</div>
+			<div id="response_wrapper1"></div>
+		</div>
+
+		<script>
+			function myFunction1() {
+			    var sys_val, dia_val, text;
+
+			    sys_val = document.getElementById("SYS1").value;
+			    dia_val = document.getElementById("DIA1").value;
+
+
+			    if (isNaN(sys_val) || isNaN(dia_val) || sys_val == '' || dia_val == '' || sys_val < 0 || sys_val > 250 || dia_val < 0 || dia_val > 200) {
+			        text ="<div id='response' style='background-color:#C2C2A3;'><strong>INPUT NOT VALID</strong><br><p>Please enter a value between 0-250 for SYS and 0-200 for DIA.</p></div>";
+			    } else if (sys_val >= 160 || dia_val >= 110) {
+			        text = "<div id='response' style='background-color:#FF4D4D;'><strong> VERY HIGH</strong><br><p>Your blood pressure is very high.<br>Record a RED reading.<br>Contact your local maternity unit immediately and arrange urgent assessment.</p></div>";
+			    } else if (sys_val >= 150 || dia_val >= 100) {
+			        text = "<div id='response' style='background-color:#FF9900;'><strong>HIGH</strong><br><p>Your BP is too high.<br>Record an ORANGE reading.<br>Contact your GP or midwife.</p></div>";
+			    } else if (sys_val >= 140 || dia_val >= 90) {
+			        text = "<div id='response' style='background-color:#FFFF66;'><strong>RAISED</strong><br><p>Your BP is raised.<br>Record a YELLOW reading.<br>No change in your medication yet.</p></div>";
+			    } else if (sys_val < 100 && dia_val < 80) {
+			        text = "<div id='response' style='background-color:#C670FF;'><strong>LOW</strong><br><p>Your BP is too low.<br>Record a PURPLE reading.<br>Contact your GP or midwife.</p></div>";
+			    } else if (130 <= sys_val && sys_val < 140 || 80 <= dia_val && dia_val < 90) {
+			    	text = "<div id='response' style='background-color:#52CC52;'><strong>HIGH NORMAL</strong><br><p>Your BP is in the target range when on treatment.<br>Record a GREEN reading.<br>This is fine provided that you have no side effects.</p></div>";
+			    } else if (130 > sys_val && sys_val >= 100 && dia_val < 80) {
+			        text = "<div id='response' style='background-color:#85D6FF;'><strong>NORMAL</strong><br><p>Your BP is normal.<br>Record a BLUE reading.<br>Follow your medication change instructions if two days in a row in BLUE.</p></div>";
+			    }
+			    document.getElementById("response_wrapper1").innerHTML = text;
+			}
+		</script>
+
+		<div id="header"><h1>TASMIN BP</h1></div>
+		<div class="wrapper">
+			<div id='inputs'>
+				Please enter your SYS value:<input type='text' id='SYS2'>
+				<br>
+				Please enter your DIA value:<input type='text' id='DIA2'>
+				<button type="button" onclick="myFunction2()">Submit</button>
+			</div>
+			<div id="response_wrapper2"></div>
+		</div>
+
+		<script>
+			function myFunction2() {
+			    var sys_val, dia_val, text;
+
+			    sys_val = document.getElementById("SYS2").value;
+			    dia_val = document.getElementById("DIA2").value;
+
+
+			    if (isNaN(sys_val) || isNaN(dia_val) || sys_val == '' || dia_val == '' || sys_val < 0 || sys_val > 250 || dia_val < 0 || dia_val > 200) {
+			        text ="<div id='response' style='background-color:#C2C2A3;'><strong>INPUT NOT VALID</strong><br><p>Please enter a value between 0-250 for SYS and 0-200 for DIA.</p></div>";
+			    } else if (sys_val >= 160 || dia_val >= 110) {
+			        text = "<div id='response' style='background-color:#FF4D4D;'><strong> VERY HIGH</strong><br><p>Your blood pressure is very high.<br>Record a RED reading.<br>Contact your local maternity unit immediately and arrange urgent assessment.</p></div>";
+			    } else if (sys_val >= 150 || dia_val >= 100) {
+			        text = "<div id='response' style='background-color:#FF9900;'><strong>HIGH</strong><br><p>Your BP is too high.<br>Record an ORANGE reading.<br>Contact your GP or midwife.</p></div>";
+			    } else if (sys_val >= 140 || dia_val >= 90) {
+			        text = "<div id='response' style='background-color:#FFFF66;'><strong>RAISED</strong><br><p>Your BP is raised.<br>Record a YELLOW reading.<br>No change in your medication yet.</p></div>";
+			    } else if (sys_val < 100 && dia_val < 90) {
+			        text = "<div id='response' style='background-color:#C670FF;'><strong>LOW</strong><br><p>Your BP is too low.<br>Record a PURPLE reading.<br>Contact your GP or midwife.</p></div>";
+			    } else if (130 <= sys_val && sys_val < 140 && dia_val < 90) {
+			    	text = "<div id='response' style='background-color:#52CC52;'><strong>HIGH NORMAL</strong><br><p>Your BP is in the target range when on treatment.<br>Record a GREEN reading.<br>This is fine provided that you have no side effects.</p></div>";
+			    } else if (130 > sys_val && sys_val >= 100 && dia_val < 90) {
+			        text = "<div id='response' style='background-color:#85D6FF;'><strong>NORMAL</strong><br><p>Your BP is normal.<br>Record a BLUE reading.<br>Follow your medication change instructions if two days in a row in BLUE.</p></div>";
+			    }
+			    document.getElementById("response_wrapper2").innerHTML = text;
+			}
+		</script>
+	</body>
 </html>

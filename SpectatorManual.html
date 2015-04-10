@@ -51,9 +51,9 @@
 		<div id="sidebar">
 			<p>Documentation</p>
 			<ul>
-				<li><a href="MadCat Manual.html">MadCat Manual</a></li>
+				<li><a href="MadCatManual.html">MadCat Manual</a></li>
 				<li>
-					<a href="Spectator Manual.html" id="currentdoc">Spectator Manual</a>
+					<a href="SpectatorManual.html" id="currentdoc">Spectator Manual</a>
 					<ol id="sidebar-subsections">
 						<li id="diagramlink" data-scroll="diagram"><a href="#">Diagram</a></li>
 						<li id="quicklink" data-scroll="quick"><a href="#">Quick-Start Guide</a></li>
@@ -61,7 +61,7 @@
 						<li id="minspeclink" data-scroll="minspec"><a href="#">Minimum Specifications</a></li>
 					</ol>
 				</li>
-				<li><a href="Import Manual.html">Import as Adobe projects guide</a></li>
+				<li><a href="ImportManual.html">Import as Adobe projects guide</a></li>
 				<li><a href="Contact.html">Contact Us</a></li>
 			</ul>
 			<p id="sidecred"> Oxford Wave Research 2015</p>
@@ -70,8 +70,8 @@
 			<h1>Spectator Manual</h1>
 			<strong>Spectator version 1.2.0.759 was used in the making of this manual.</strong>
 			<h2 id="diagram">Diagram and Key</h2>
-			<a href="Spectator Images/Spectator Diagram.png" data-lightbox="spectator-images" data-title="Diagram of Spectator Interface">
-			<img src="Spectator Images/Spectator Diagram Small.png"></a>
+			<a href="SpectatorImages/SpectatorDiagram.png" data-lightbox="spectator-images" data-title="Diagram of Spectator Interface">
+			<img src="SpectatorImages/SpectatorDiagramSmall.png"></a>
 			<ol>
 				<li>Dropdown Options</li>
 				<li>Track controls</li>
@@ -96,32 +96,32 @@
 			<ol>
 				<li>
 					<p><strong>Drag a MadCat exported XML, or media files (or folders containing them) into Spectator.</strong></p>
-					<a href="Spectator Images/QuickStart 1.png" data-lightbox="spectator-images" data-title="Drag a MadCat exported XML, or media files (or folders containing them) into Spectator.">
-					<img src="Spectator Images/QuickStart 1 Small.png"></a>
+					<a href="SpectatorImages/QuickStart1.png" data-lightbox="spectator-images" data-title="Drag a MadCat exported XML, or media files (or folders containing them) into Spectator.">
+					<img src="SpectatorImages/QuickStart1Small.png"></a>
 					<p>Skip this step if you are opening the files you want straight from MadCat.</p>
 				</li>
 				<li>
 					<p><strong>Once all tracks have been loaded, you can control playback for all tracks with the bottom controls, or individual tracks using the side control panels.</p></strong>
-					<a href="Spectator Images/QuickStart 2.png" data-lightbox="spectator-images" data-title="Once all tracks have been loaded, you can control playback for all tracks with the bottom controls, or individual tracks using the side control panels.">
-					<img src="Spectator Images/QuickStart 2 Small.png"></a>
+					<a href="SpectatorImages/QuickStart2.png" data-lightbox="spectator-images" data-title="Once all tracks have been loaded, you can control playback for all tracks with the bottom controls, or individual tracks using the side control panels.">
+					<img src="SpectatorImages/QuickStart2Small.png"></a>
 					<p>If any of the tracks are video files, clicking play will open a video window to display them.</p>
 				</li>
 				<li>
 					<p><strong>You can toggle all tracks to display between Spectrogram or Waveform mode, toggle them individually and also change the axis scales.</strong></p>
-					<a href="Spectator Images/QuickStart 3.png" data-lightbox="spectator-images" data-title="You can toggle all tracks to display between Spectrogram or Waveform mode, toggle them individually and also change the axis scales.">
-					<img src="Spectator Images/QuickStart 3 Small.png"></a>
+					<a href="SpectatorImages/QuickStart3.png" data-lightbox="spectator-images" data-title="You can toggle all tracks to display between Spectrogram or Waveform mode, toggle them individually and also change the axis scales.">
+					<img src="SpectatorImages/QuickStart3Small.png"></a>
 				</li>
 			</ol>
 			<hr id="comparestart">
 			<h2 id="compare">Compare Media files in Spectator</h2>
 			<ol>
-				<li><p>To open files in Spectator, you can load either a selection of media files or folders containing them, an XML file that was either previously created by Spectator or exported from MadCat, or just open Spectator from MadCat with the desired files (see the <a href="MadCat manual.html#review">MadCat manual</a> for how to do this). XMLs or media files/folders can be dragged into Spectator (attempting to drag in both will have Spectator load the media files and ignore the XML). Folders will be recursively searched for media files. XML files can also be loaded via the File>Open dropdown option.</p></li>
+				<li><p>To open files in Spectator, you can load either a selection of media files or folders containing them, an XML file that was either previously created by Spectator or exported from MadCat, or just open Spectator from MadCat with the desired files (see the <a href="MadCatManual.html#review">MadCat manual</a> for how to do this). XMLs or media files/folders can be dragged into Spectator (attempting to drag in both will have Spectator load the media files and ignore the XML). Folders will be recursively searched for media files. XML files can also be loaded via the File>Open dropdown option.</p></li>
 				<li><p>Spectator will then load the selected media files and synchronise them using their audio. Each file will display as its own track as a Spectrogram or Waveform display with accompanying track controls for muting, soloing, changing the track volume and changing the stereo output. Track information can be seen by hovering the mouse over the Spectrogram/Waveform display, and the display can be toggled from Spectrogram/Waveform mode by the lower right box that appears when hovering over the track display. The top X-Axis is the time, whilst the Y-Axis will be either frequency (if the track is in Spectrogram display mode) or decibel level (if in Waveform display mode).</p></li>
 				<li><p>Once all desired tracks are loaded, playback can be made to start via the Play button beneath all the tracks. If any of the tracks are video files, this will open up a Video Window which will have a section to display the video of each of the video files being played. Playback can be paused using the Pause button and stopped with the Stop button, which will also close the Video Window if open. You can also seek to points within the tracks via clicking on them at the position you wish to go to, when doing this the time position you have set will appear briefly left of the Play button.</p></li>
 				<li>
 					<p>All tracks can be muted or unmuted via the lower left Mute All button, and also have their Solo state set or unset via the Solo All button. The display of all tracks can be toggled to Waveform/Spectrogram mode via either the lower left Toggle Waveform/Spectrogram View All Tracks button or the View>Spectrogram and View>Waveform options. The lower right buttons allow the opening of a slider to adjust the Y-Axis scale, the increase of the X-Axis scale and the decrease of the X-Axis scale respectively. The axis scales can also be modified via the View dropdown menu.</p>
-					<a href="Spectator Images/View.png" data-lightbox="spectator-images" data-title="View dropdown options.">
-					<img src="Spectator Images/View.png"></a>
+					<a href="SpectatorImages/View.png" data-lightbox="spectator-images" data-title="View dropdown options.">
+					<img src="SpectatorImages/View.png"></a>
 				</li>
 				<li>
 					<p>The Preferences dropdown menu allows you to alter how Spectator should behave:</p>
@@ -130,14 +130,14 @@
 						<li>Zoom Level will allow you to save the current Axis scales, or reset them back to their default size.</li>
 						<li>Default View will allow you to change whether Spectator should open in either Spectrogram or Waveform display mode by default, and will also change all current tracks to that display mode when selected.</li>
 					</ul>
-					<a href="Spectator Images/Preferences.png" data-lightbox="spectator-images" data-title="Preferences dropdown options.">
-					<img src="Spectator Images/Preferences.png"></a>
+					<a href="SpectatorImages/Preferences.png" data-lightbox="spectator-images" data-title="Preferences dropdown options.">
+					<img src="SpectatorImages/Preferences.png"></a>
 				</li>
-				<li><p>Spectator can save the set of files it has opened and their synchronised states through an XML document via File>Save and File>Save as&#133;. This XML can then be re-opened into Spectator or imported into Adobe&#39;s Audition and Premiere programs as projects. Note that the media files used cannot be moved or renamed between the Spectator XML export and either importing into an Adobe program or re-opening in Spectator, and also that importing an XML that includes video files into Adobe Audition is not supported. See the <a href="Import manual.html">&#147;Import as Adobe projects guide&#148;</a> for more details on this.</p></li>
+				<li><p>Spectator can save the set of files it has opened and their synchronised states through an XML document via File>Save and File>Save as&#133;. This XML can then be re-opened into Spectator or imported into Adobe&#39;s Audition and Premiere programs as projects. Note that the media files used cannot be moved or renamed between the Spectator XML export and either importing into an Adobe program or re-opening in Spectator, and also that importing an XML that includes video files into Adobe Audition is not supported. See the <a href="ImportManual.html">&#147;Import as Adobe projects guide&#148;</a> for more details on this.</p></li>
 				<li>
 					<p>Spectator can also export a multichannel audio WAV file via File>Export>Multichannel wave file dropdown options. Each channel will be the audio of each loaded track. If the File>Export>Multichannel wave file with channel map&#133; is selected, a text file with the same name as the WAV file will be created alongside that will give information on each channel.</p>
-					<a href="Spectator Images/File.png" data-lightbox="spectator-images" data-title="File dropdown options.">
-					<img src="Spectator Images/File.png"></a>
+					<a href="SpectatorImages/File.png" data-lightbox="spectator-images" data-title="File dropdown options.">
+					<img src="SpectatorImages/File.png"></a>
 				</li>
 			</ol>
 			<hr id="minspecstart">

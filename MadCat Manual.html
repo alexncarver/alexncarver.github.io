@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MadCat Manual</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="lightbox/js/jquery-1.11.0.min.js"></script>
+		<script src="lightbox/js/lightbox.min.js"></script>
+		<link href="lightbox/css/lightbox.css" rel="stylesheet" />
+		<script type="text/javascript">
+		$( document ).ready(function() {
+			var leftOffset = parseInt($("#sidebar").css('left'));
+			$(window).scroll(function(){
+	  			$('#sidebar').css('left',-$(window).scrollLeft() + leftOffset);
+			});
+
+			$('ol#sidebar-subsections li').on('click', function() {
+
+			    var scrollAnchor = $(this).attr('data-scroll');
+			    var scrollPoint = $('h2#' + scrollAnchor).offset().top - 20;
+
+			    $('body,html').animate({
+			        scrollTop: scrollPoint
+			    }, 500);
+
+			    return false;
+
+			})
+
+
+			$(window).scroll(function() {
+			    var windscroll = $(window).scrollTop();
+			    if (windscroll >= 100) {
+			        $('div#main h2').each(function(i) {
+			            if ($(this).position().top <= windscroll + 200) {
+			                $('ol#sidebar-subsections li.currentsub').removeClass('currentsub');
+			                $('ol#sidebar-subsections li').eq(i).addClass('currentsub');
+			            }
+			        });
+
+			    } else {
+
+			        $('ol#sidebar-subsections li.currentsub').removeClass('currentsub');
+			        $('ol#sidebar-subsections li:first').addClass('currentsub');
+			    }
+
+			}).scroll();
+		});
+		</script>
+	</head>
+	<body style="background-color:#CAE5FF">
+		<div id="sidebar">
+			<p>Documentation</p>
+			<ul>
+				<li>
+					<a href="MadCat Manual.html" id="currentdoc">MadCat Manual</a>
+					<ol id="sidebar-subsections">
+						<li id="diagramlink" data-scroll="diagram"><a href="#">Diagram</a></li>
+						<li id="quicklink" data-scroll="quick"><a href="#">Quick-Start Guide</a></li>
+						<li id="licenselink" data-scroll="license"> <a href="#">Validating your license</a></li>
+						<li id="compselflink" data-scroll="compself"><a href="#">To Compare a Set of Media files in MadCat with itself</a></li>
+						<li id="compothlink" data-scroll="compoth"><a href="#">To Compare a Set of Media files with another set</a></li>
+						<li id="reviewlink" data-scroll="review"><a href="#">Reviewing the results of Comparisons</a></li>
+						<li id="advancedlink" data-scroll="advanced"><a href="#">Advanced Features</a></li>
+						<li id="minspeclink" data-scroll="minspec"><a href="#">Minimum Specifications</a></li>
+					</ol>
+				</li>
+				<li><a href="Spectator Manual.html">Spectator Manual</a></li>
+				<li><a href="Import Manual.html">Import as Adobe projects guide</a></li>
+				<li><a href="Contact.html">Contact Us</a></li>
+			</ul>
+			<p id="sidecred"> Oxford Wave Research 2015</p>
+		</div>
+		<div id="main">
+			<h1>MadCat Manual</h1>
+			<strong>MadCat version 1.2.0.647 was used in the making of this manual.</strong>
+			<h2 id="diagram">Diagram and Key</h2>
+			<a href="MadCat Images/Diagram.png" data-lightbox="madcat-images" data-title="Diagram of MadCat Interface">
+			<img src="MadCat Images/Diagram Small.png"></a>
+			<ol>
+				<li>Dropdown Options</li>
+				<li>Query files list</li>
+				<li>Add and remove query file buttons</li>
+				<li>&#147;Compare with self&#148; checkbox</li>
+				<li>Reference files list</li>
+				<li>Add and remove reference files buttons</li>
+				<li>Progress tracker, status and timer</li>
+				<li>Run comparison button</li>
+				<li>Results display</li>
+				<li>Query file columns</li>
+				<li>Reference file rows</li>
+				<li>Match result square for differnet files</li>
+				<li>Match result square for the same file</li>
+				<li>Colour key for match square background</li>
+				<li>File dropdown options</li>
+			</ol>
+			<hr id="quickstart">
+			<h2 id="quick">Quick-Start Guide</h2>
+			<ol>
+				<li>
+					<p><strong>Drag the media files (or folders containing them) into the query files box.</strong></p>
+					<a href="MadCat Images/QuickStart1.png" data-lightbox="madcat-images" data-title="Drag the media files (or folders containing them) into the query files box.">
+					<img src="MadCat Images/QuickStart1 Small.png"></a>
+					<p>Folders dragged in will be recursively searched for media files. You can also add files using File>Add>Query files&#133; or by using the Add Query file button. Files can be removed by selecting them and clicking the Remove Query file button.</p>
+				</li>
+				<li>
+					<p><strong>Wait until all files are loaded and click Compare.</strong></p>
+					<a href="MadCat Images/QuickStart2.png" data-lightbox="madcat-images" data-title="Wait until all files are loaded and click Compare.">
+					<img src="MadCat Images/QuickStart2 Small.png"></a>
+				</li>
+				<li>
+					<p><strong>MadCat will then run a comparison and display the results.</strong></p>
+					<a href="MadCat Images/QuickStart3.png" data-lightbox="madcat-images" data-title="MadCat will then run a comparison and display the results.">
+					<img src="MadCat Images/QuickStart3 Small.png"></a>
+				</li>
+			</ol>
+			<hr id="licensestart">
+			<h2 id="license">Validating your license</h2>
+			<ul>
+				<li>
+					<p>MadCat will need a valid license in order to run. You will be asked to validate your MadCat license on install, but you may need to also do this from within the program. To do so, select Help>About from MadCat, which will bring up the About window. You will see your license information displayed at the bottom of this window, click on it to open a new window to validate a new license key. You will need to enter both your license key and the license name given to you by Oxford Wave Research.</p>
+					<a href="MadCat Images/license.png" data-lightbox="madcat-images" data-title="MadCat's About and license Key Validation windows.">
+						<img src="MadCat Images/license Small.png"></a>
+				</li>
+				<li>
+					<p>Demo and duration based licenses will work for a set duration of time before expiring, whereupon MadCat will cease to operate. Please contact Oxford Wave Research in order to request a renewal of your license. This license can be used by any number of users on any number of machines until its expiry date.</p>
+				</li>
+				<li>
+					<p>USB Key licenses instead are permanent, but require a unique USB Key be loaded onto the machine for the license to be valid. If the USB Key device is not found on the machine by MadCat, it will not operate. Contact Oxford Wave Research to request a USB Key.</p>
+				</li>
+			</ul>
+			<hr id="compselfstart">
+			<h2 id="compself">To Compare a Set of Media files in MadCat with itself</h2>
+			<ol>
+				<li><p>With MadCat open, any video or audio files can be loaded for comparison by either dragging them (or a folder containing them) into the top-left query file list box, by selecting File>Add>Query Files&#133; dropdown option or by clicking on the Add query file button (the plus sign below the box). Note that the latter two methods will by default expect audio files, but can still select video files by changing the accepted files extensions to &#147;All Files&#148;. Media files can be removed from the comparison by selecting them within this box and clicking the Remove query files button (minus sign). Note that MadCat cannot compare media files that are less than 5 seconds in length.</p></li>
+				<li><p>Once all video files are loaded (the file loading progress bar is in the lower left corner), ensure that that the &#147;Compare with self&#148; checkbox is checked, and then click &#147;Compare&#148; in the lower left corner. MadCat will then run and display a comparison between all media files in the query list.</p></li>
+				<li><p>The titles of the media files will be displayed as columns and rows. The squares will display information on the comparison of the media files that are that column and row. See <a href="#review">&#147;Reviewing the results of a Comparison&#148;</a> on how the results are displayed.</p></li>
+			</ol>
+			<hr id="compothstart">
+			<h2 id="compoth">To Compare a Set of Media files with another set</h2>
+			<ol>
+				<li><p>With MadCat open, load the first (query) set of video or audio files using the method described above.</li>
+				<li><p>Ensure that the &#147;Compare with self&#148; checkbox is unchecked, then load the second (reference) set by dragging the files (or a folder containing them) into the second box (below the first), selecting File>Add>Reference Files&#133;, or using the Add reference file button (the plus sign below the reference files box).  Files can be removed by selecting the files to be removed in the reference files box and clicking the Remove reference files button (minus sign).</p></li>
+				<li><p>Once all files are reported loaded in the lower left progress bar, click &#147;Compare&#148;. MadCat will then compare each of the query media files to the reference ones. Reference files will act as columns and the query files as rows in the main display. See <a href="#review">&#147;Reviewing the results of a Comparison&#148;</a> on how the results are displayed.</p></li>
+			</ol>
+			<hr id="reviewstart">
+			<h2 id="review">Reviewing the results of Comparisons</h2>
+			<ol>
+				<li><p>The media files to be compared will be used as rows and columns in the comparison display, with squares where these intersect being the comparison results between the row and column files.</p></li>
+				<li>
+					<p>Within each square, the top left number is the confidence value which represents how well the audio in the two files match. The lower left number is the time offset of where the audio matches of the row media file compared to the column file. The background colour of the square is a representation of the match confidence value as per the colour key to the right side of the comparison results display. A white square background means the files compared are the same file.</p>
+					<a href="MadCat Images/Match Square.png" data-lightbox="madcat-images" data-title="An example match square.">
+					<img src="MadCat Images/Match Square.png"></a>
+				</li>
+				<li><p>Double clicking a comparison result square will open Spectator with the two compared files synchronised to the time offset given by MadCat. See the <a href="Spectator Manual.html#compare">Spectator manual</a> for more details on viewing files within it.</p></li>
+				<li>
+					<p>Selecting Edit>Adjust match threshold&#133; will allow you to edit the required number that the match confidence value for a comparison must be above in order to register as a match (the default match threshold is 2). Selecting View>Hide non-matches will black out squares that do not register as a match (as the match confidence value is below the set match threshold).</p>
+					<a href="MadCat Images/Hide NonMatch.png" data-lightbox="madcat-images" data-title="With Hide non-matches enabled.">
+					<img src="MadCat Images/Hide NonMatch Small.png"></a>
+				</li>
+				<li>
+					<p>If a media file has a registered match (a comparison that has higher match confidence value than the match threshold), that file&#39;s column or row will have the following dropdown options:</p>
+					<ul>
+						<li>View in Spectator>Select Multiple Matches&#133; : This will allow you to open the selected file as well as any selection of files it was found to match with into Spectator, synchronised by the MadCat found time offsets. See the <a href="Spectator Manual.html#compare">Spectator manual</a> for more details on viewing files within it.</li>
+						<li>View in Spectator>Select Single Match: This will give you an option for each file found to match with the selected file, and when selected will open both in Spectator synchronised. This is the same as double clicking on the comparison square for these two files. See the <a href="Spectator Manual.html#compare">Spectator manual</a> for more details on viewing files within it.</li>
+						<li>Export>Export to multitrack XML format (Adobe)&#133; : This will allow you to export a synchronised project XML file of the selected track and selected matching files which can be imported as projects into Adobe Audition and Adobe Premiere, or opened in Spectator. Note that the media files used cannot be moved or renamed between exporting the XML and importing into Audition/Premier or opening in Spectator, and also that importing an XML which includes video files into Adobe Audition is not supported. See the <a href="Import manual.html">&#147;Import as Adobe projects guide&#148;</a> for more details on importing these XMLs.</li>
+						<li>Export>Export to multichannel&#133; : This will export the selected file and selected matching files into a synchronised multichannel WAV audio file, with each media file occupying an individual channel.</li>
+						<li>Export>Export auto mixed&#133; : This will export the selected file and selected matching files into a synchronised WAV audio file with the audio of the files automatically mixed into a single channel.</li>
+						<li>Open matched file locations: This will open the file locations of all files found to match the selected file in Explorer. </li>
+					</ul>
+					<a href="MadCat Images/File Dropdown.png" data-lightbox="madcat-images" data-title="File dropdown options">
+					<img src="MadCat Images/File Dropdown.png"></a>
+				</li>
+				<li>
+					<p>Comma Separated Value (CSV) files, which can be reviewed in Microsoft Excel, of comparison results can be created via File>Save options:</p>
+					<ul>
+						<li>Save match list: This will save a CSV with each row beginning with a file and later columns in a line being the matching files with their time offsets to the first file. The full path option will write the full paths for files into the CSV, whilst the filename option will just use filenames.</li>
+						<li>Save comparison results: This will save a CSV with the media files as columns and rows with comparison data of files in intersecting squares. The confidence option will give the confidence match value, start offset will give the offset time of the row file from the start of the column file, whilst end offset will use the end of the column file. </li>
+					</ul>
+					<a href="MadCat Images/CSV Options.png" data-lightbox="madcat-images" data-title="CSV options">
+					<img src="MadCat Images/CSV Options.png"></a>
+				</li>
+			</ol>
+			<hr id="advancedstart">
+			<h2 id="advanced">Advanced Features</h2>
+			<ul>
+				<li><p>Edit>Cache Fingerprint Files: With this option enabled, MadCat will create fingerprint files (.fpt) for all media files it loads within the same directory if they do not already exist. These fingerprint files can then be used by MadCat for  future loading in lieu of the actual files and are significantly smaller, so will be loaded far faster (up to 500 times faster). When loading a media file, MadCat will first look for an associated fingerprint file for the media files in the same directory and load them instead if found. Fingerprint files can also be loaded directly, even without its parent media file (though these will not have the options to export XMLs, WAV files or open in Spectator). Loading a media file when its fingerprint file is already loaded will replace the fingerprint file (though the reverse is not true). Note that this option is enabled by default.</p></li>
+				<li><p>Edit>Group media files in directory: If this option is enabled, then when exporting a project XML for Adobe Audition or Adobe Premiere, instead of each media file occupying its own track, media files within the same directory will be grouped into the same track. If files overlap, files that start later will override the end of the earlier file (though this can be changed within Audition/Premiere). See the <a href="Import manual.html#premgroup">&#147;Import as Adobe projects guide&#148;</a> for more details on this.</p></li>
+			</ul>
+			<hr id="minspecstart">
+			<h2 id="minspec">Minimum Specifications:</h2>
+			<ul>
+				<li><p>Microsoft Windows 7 or 8, 64-bit editions.</p></li>
+				<li><p>4 GB of RAM.</p></li>
+			</ul>
+		</div>
+		<div id="credits">
+			<p>MadCat version 1.2.0.647 was used in the making of this manual.</p>
+				<h3>Oxford Wave Research 2015</h3>
+			</div>
+	</body>
+</html>

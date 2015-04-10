@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Import as Adobe projects guide</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="lightbox/js/jquery-1.11.0.min.js"></script>
+		<script src="lightbox/js/lightbox.min.js"></script>
+		<link href="lightbox/css/lightbox.css" rel="stylesheet" />
+		<script type="text/javascript">
+		$( document ).ready(function() {
+			var leftOffset = parseInt($("#sidebar").css('left'));
+			$(window).scroll(function(){
+	  			$('#sidebar').css('left',-$(window).scrollLeft() + leftOffset);
+			});
+
+
+			$('ol#sidebar-subsections li').on('click', function() {
+
+			    var scrollAnchor = $(this).attr('data-scroll');
+			    var scrollPoint = $('h2#' + scrollAnchor).offset().top - 30;
+
+			    $('body,html').animate({
+			        scrollTop: scrollPoint
+			    }, 500);
+
+			    return false;
+
+			})
+
+
+			$(window).scroll(function() {
+			    var windscroll = $(window).scrollTop();
+			    if (windscroll >= 100) {
+			        $('div#main h2').each(function(i) {
+			            if ($(this).position().top <= windscroll + 200) {
+			                $('ol#sidebar-subsections li.currentsub').removeClass('currentsub');
+			                $('ol#sidebar-subsections li').eq(i).addClass('currentsub');
+			            }
+			        });
+
+			    } else {
+
+			        $('ol#sidebar-subsections li.currentsub').removeClass('currentsub');
+			        $('ol#sidebar-subsections li:first').addClass('currentsub');
+			    }
+
+			}).scroll();
+		});
+		</script>
+	</head>
+	<body style="background-color:#FFDE9D">
+		<div id="sidebar">
+			<p>Documentation</p>
+			<ul>
+				<li><a href="MadCat Manual.html">MadCat Manual</a></li>
+				<li><a href="Spectator Manual.html">Spectator Manual</a></li>
+				<li>
+					<a href="Import Manual.html" id="currentdoc">Import as Adobe projects guide</a>
+					<ol id="sidebar-subsections">
+						<li id="introlink" data-scroll="intro"><a href="#">Introduction</a></li>
+						<li id="audlink" data-scroll="aud"><a href="#" >Importing into Adobe Audition</a></li>
+						<li id="premindlink" data-scroll="premind"><a href="#">Importing files as individual tracks into Adobe Premiere</a></li>
+						<li id="premgrouplink" data-scroll="premgroup"><a href="#">Importing files into Grouped Tracks into Adobe Premiere</a></li>
+					</ol>
+					<li><a href="Contact.html">Contact Us</a></li>
+				</li>
+			</ul>
+			<p id="sidecred"> Oxford Wave Research 2015</p>
+		</div>
+		<div id="main">
+			<h1>Import as Adobe projects guide</h1>
+			<strong>MadCat v1.2.0.647, Spectator v1.2.0.759 and Adobe Audition and Premiere 2014 release versions were used in the making of this manual.</strong>
+			<h2 id="intro">Introduction</h2>
+			<p>XMLs that have been exported from MadCat or saved from Spectator can be imported as projects into both Adobe&#39;s Audition and Premiere software. These XMLs will have the video and audio files you desire synchronised by MadCat/Spectator.  Note that this is not meant to be a guide on how to use these programs, just on how to import MadCat and Spectator XMLs into them.See the <a href="MadCat manual.html#review">MadCat</a> and <a href="Spectator Manual.html#compare">Spectator</a> manuals on how to export and create XMLs ready to import with desired video and audio files. <strong>Note that the media files used must not have been renamed, moved or deleted between creating the XML and importing, and Audition and Premiere must have access to the media files.</strong> </p>
+			<p>The following was done with Audition and Premiere 2014 release versions.</p>
+			<hr id="audstart">
+			<h2 id="aud">Importing into Adobe Audition</h2>
+			<strong>Note that Audition is an audio only editor, it will not support an XML that includes video files.</strong>
+			<ol>
+				<li>
+					<p><strong>Open a new session of Audition and select File>Import>File&#133; from the dropdown menu.</strong></p>
+					<a href="Import images/Picture1.png" data-lightbox="import-images" data-title="Open a new session of Audition and select File>Import>File&#133; from the dropdown menu.">
+					<img src="Import images/Picture1 Small.png"></a></li>
+				<br>
+				<li>
+					<p><strong>Select your MadCat/Spectator created XML and click Open.</strong></p>
+					<a href="Import images/Picture2.png" data-lightbox="import-images" data-title="Select your MadCat/Spectator created XML and click Open.">
+					<img src="Import images/Picture2 Small.png"></a>
+					<p>Remember that the media files used cannot have been changed, moved or deleted since creation of the XML, and that Audition does not support XMLs that include video files.</p>
+				</li>
+				<li>
+					<p><strong>Each audio file will then be opened in Audition as an individual track and the tracks will all be synchronised according to the time offest found by MadCat/Spectator.</strong></p>
+					<a href="Import images/Picture3.png" data-lightbox="import-images" data-title="Each audio file will then be opened in Audition as an individual track and the tracks will all be synchronised according to the time offest found by MadCat/Spectator.">
+					<img src="Import images/Picture3 Small.png"></a>
+					<p>If you see no change, you may need to select Window>Workspace>Reset &#147;Default&#148;&#133; to reset all windows within Audition to their default state and try again.</p>
+					<p>You can then edit the audio tracks at will using Auditions features.</p>
+				</li>
+			</ol>
+			<hr id="premindstart">
+			<h2 id="premind">Importing files as individual tracks into Adobe Premiere</h2>
+			<ol>
+				<li></strong>
+					<p><strong>If exporting the XML from MadCat, ensure that &#147;Edit>Group media files in directory&#148; is disabled (which it is by default).</strong></p>
+					<a href="Import images/Picture11.png" data-lightbox="import-images" data-title="If exporting the XML from MadCat, ensure that &#147;Edit>Group media files in directory&#148; is disabled (which it is by default).">
+					<img src="Import images/Picture11.png"></a>
+					<p> This does not affect how MadCat runs comparisons, only the XML it exports and how it is imported by Premiere.</p>
+				</li>
+				<li>
+					<p><strong>Open Premiere and create a New Project.</strong></p>
+					<a href="Import images/Picture4.png" data-lightbox="import-images" data-title="Open Premiere and create a New Project.">
+					<img src="Import images/Picture4 Small.png"></a>
+				</li>
+				<br>
+				<li>
+					<p><strong>Select File>Import&#133; from dropdown menu.</strong></p>
+					<a href="Import images/Picture5.png" data-lightbox="import-images" data-title="Select File>Import&#133; from dropdown menu.">
+					<img src="Import images/Picture5 Small.png"></a>
+				</li>
+				<br>
+				<li>
+					<p><strong>Select your MadCat/Spectator created XML and click Open.</strong></p>
+					<a href="Import images/Picture6.png" data-lightbox="import-images" data-title="Select your MadCat/Spectator created XML and click Open.">
+					<img src="Import images/Picture6 Small.png"></a>
+					<p>Remeber that the media files used cannot have been changed, moved or deleted since creation of the XML.</p>
+				</li>
+				<li>
+					<p><strong>Once all files are loaded, double click the XML (with a blue thumbnail icon) within the Project window.</strong></p>
+					<a href="Import images/Picture7.png" data-lightbox="import-images" data-title="Once all files are loaded, double click the XML (with a blue thumbnail icon) within the Project window.">
+					<img src="Import images/Picture7 Small.png"></a>
+					<p>If you cannot see these files, you may need to select &#147;Window>Workspace>Reset Current Workspace&#133;&#148; from the dropdown menu. By default the XML will be the last item of the Project files window, which is on the lower left.</p>
+				</li>
+				<li>
+					<p><strong>Your media files will then load into tracks and will be synchronised according to MadCat/Spectator found time offests.</strong></p>
+					<a href="Import images/Picture8.png" data-lightbox="import-images" data-title="Your media files will then load into tracks and will be synchronised according to MadCat/Spectator found time offests.">
+					<img src="Import images/Picture8 Small.png"></a>
+					<p>You can then edit the project at will using Premiere&#39;s features.</p>
+				</li>
+			</ol>
+			<hr id="premgroupstart">
+			<h2 id="premgroup">Importing files into Grouped Tracks into Adobe Premiere</h2>
+			<ol>
+				<li>
+					<p><strong>In MadCat, ensure that &#147;Edit>Group media files in directory&#148; is enabled (it is disabled by default).</strong></p>
+					<a href="Import images/Picture12.png" data-lightbox="import-images" data-title="In MadCat, ensure that &#147;Edit>Group media files in directory&#148; is enabled (it is disabled by default).">
+					<img src="Import images/Picture12.png"></a>
+					<p> This does not affect how MadCat runs comparisons, only the XML it exports and how it is imported by Premiere.</p>
+				</li>
+				<li>
+					<p><strong>Ensure that videos you want to be grouped onto the same track in Prermiere are contained within the same folder, and then drag the folders into MadCat.</strong></p>
+					<a href="Import images/Picture9.png" data-lightbox="import-images" data-title="Ensure that videos you want to be grouped onto the same track in Prermiere are contained within the same folder, and then drag the folders into MadCat.">
+					<img src="Import images/Picture9 Small.png"></a>
+					<p>Each folder will become its own track when imported into Premiere. Note therefore that if you want a video to have an individual track, it must be placed within its own folder. Audio and video files will not group together, regardless of file structure.</p>
+				</li>
+				<li>
+					<p><strong>Compare and export an XML with the desired files from MadCat as usual.</strong></p>
+					<a href="Import images/Picture13.png" data-lightbox="import-images" data-title="Compare and export an XML with the desired files from MadCat as usual.">
+					<img src="Import images/Picture13.png"></a>
+					<p>See the <a href="MadCat manual.html#review">MadCat manual</a> for more details on how to do this.</p>
+				</li>
+				<li>
+					<p><strong>Import the XML into Adobe Premiere as usual.</strong></p>
+					<a href="Import images/Picture14.png" data-lightbox="import-images" data-title="Import the XML into Adobe Premiere as usual.">
+					<img src="Import images/Picture14.png"></a>
+					<p>As according to steps 2 onwards above in <a href="#premind">&#147;Importing Individual tracks into Adobe Premiere&#148;</a>.</p>
+				</li>
+				<li>
+					<p><strong>Videos within the same folder will then occupy the same track.</strong></p>
+					<a href="Import images/Picture10.png" data-lightbox="import-images" data-title="Videos within the same folder will then occupy the same track.">
+					<img src="Import images/Picture10 Small.png"></a>
+					<p>If videos with the same track overlap, the earlier one will be cut to end when the later one begins (though the entire file will be loaded can so this can be manually changed by stretching the files in the track view in Premiere).</p>
+				</li>
+			</ol>
+		</div>
+		<div id="credits">
+				<p>MadCat v1.2.0.647, Spectator v1.2.0.759 and Adobe Audition and Premiere 2014 release versions were used in the making of this manual.</p>
+				<h3>Oxford Wave Research 2015</h3>
+			</div>
+	</body>
+</html>
+
+
+

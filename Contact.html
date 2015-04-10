@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Contact Details</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="lightbox/js/jquery-1.11.0.min.js"></script>
+		<script src="lightbox/js/lightbox.min.js"></script>
+		<link href="lightbox/css/lightbox.css" rel="stylesheet" />
+		<script type="text/javascript">
+		$( document ).ready(function() {
+			var leftOffset = parseInt($("#sidebar").css('left'));
+			$(window).scroll(function(){
+	  			$('#sidebar').css('left',-$(window).scrollLeft() + leftOffset);
+			});
+		});
+		</script>
+	</head>
+	<body style="background-color:#FFFF85">
+		<div id="sidebar">
+			<p>Documentation</p>
+			<ul>
+				<li><a href="MadCat Manual.html">MadCat Manual</a></li>
+				<li><a href="Spectator Manual.html">Spectator Manual</a></li>
+				<li><a href="Import Manual.html">Import as Adobe projects guide</a></li>
+				<li><a href="Contact.html" id="currentdoc">Contact Us</a></li>
+			</ul>
+			<p id="sidecred"> Oxford Wave Research 2015</p>
+		</div>
+		<div id="main">
+			<h1>Contact Details</h1>
+			<h2>Office Address:</h2>
+				<p>Oxford Wave Research Ltd<br>
+				Clarendon Business Centre<br>
+				Sandford Gate<br> 
+				East Point Business Park<br>
+				Sandy Lane West<br>
+				Oxford OX4 6LB<br>
+				United Kingdom</p>
+
+
+			<h2>Email:</h2>
+			<p>Sales: <a href="mailto:sales@oxfordwaveresearch.com" target="_top">sales@oxfordwaveresearch.com</a><br>
+			Info: <a href="mailto:info@oxfordwaveresearch.com" target="_top">info@oxfordwaveresearch.com</a></p>
+
+			<h2>Phone:</h2>
+			<p>+44 1865 910345</p>
+
+		</div>
+		<div id="credits">
+				<h3>Oxford Wave Research 2015</h3>
+			</div>
+	</body>
+</html>
+
+

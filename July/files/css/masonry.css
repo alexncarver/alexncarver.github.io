@@ -1,24 +1,27 @@
-/* Defaults */
-/* body {
-  background: #f9f9f9;
-  color: #465665;
-} */
 body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+background: linear-gradient(226deg, #cc0013, #b4b128, #0f9027, #3f2c8c);
+    background-size: 1000% 1000%;
+
+
+	 -webkit-animation: AnimationName 20s ease infinite;
+	 -moz-animation: AnimationName 20s ease infinite;
+	 animation: AnimationName 20s ease infinite;
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+@-webkit-keyframes AnimationName {
+	 0%{background-position:100% 0%}
+	 50%{background-position:0% 100%}
+	 100%{background-position:100% 0%}
+}
+@-moz-keyframes AnimationName {
+	 0%{background-position:100% 0%}
+	 50%{background-position:0% 100%}
+	 100%{background-position:100% 0%}
+}
+@keyframes AnimationName {
+	 0%{background-position:100% 0%}
+	 50%{background-position:0% 100%}
+	 100%{background-position:100% 0%}
 }
 
 a {
@@ -28,8 +31,12 @@ a {
 
 /* The title */
 .title {
-  font-weight: 700;
-  font-family: Segoe Print, sans-serif;
+  font-weight: 400;
+	color: #dfdfdf;
+	font-family: Segoe UI, open sans, sans-serif;
+  /*font-family: open sans,Arial,Helvetica Neue,sans-serif;*/
+	text-transform: uppercase;
+	letter-spacing: 3px;
 }
 
 /* The description */
@@ -37,6 +44,7 @@ a {
   font-size: 1em;
   font-style: italic;
   font-family: Georgia, serif;
+		color: #dfdfdf;
 }
 
 /* Text-centering */
@@ -51,6 +59,7 @@ a {
   margin: 1.75em 0 .75em;
   border-bottom: 3px double rgba(0, 0, 0, 0.05);
   margin-bottom: 1.75em;
+	color: #dfdfdf;
 }
 
 .intro a {

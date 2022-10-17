@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Starship Test</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    </head>
+	<body>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $.getJSON("Starships.json", function(data){
+          console.log(data.Ships[0]["Name"]);
+          console.log(data.Ships[0]["Faction"]);
+          console.log(data.Ships[0]["Systems"]["Structure"]);
+          console.log(data.Ships[0]["Scale"]);
+        })
+      })
+
+    </script>
+	</body>
+</html>

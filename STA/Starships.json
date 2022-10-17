@@ -1,0 +1,74 @@
+{
+  "Ships": [
+    {
+        "Name" : "D7 Battle Cruiser",
+        "Faction": "Klingon",
+        "Systems": {
+          "Comms": 7,
+          "Engines": 8,
+          "Structure": 7,
+          "Computers": 7,
+          "Sensors": 7,
+          "Weapons": 9
+        },
+        "Departments": {
+          "Command": 2,
+          "Security": 3,
+          "Science": 1,
+          "Conn": 3,
+          "Engineering": 2,
+          "Medicine": 2
+        },
+        "Power": 8,
+        "Scale": 4,
+        "Shields": 10,
+        "Resistance": 4,
+        "Crew": "Proficient: Atribute 9, Discipline 2",
+        "Atacks": [
+          "Disrupter Cannons: Energy, Range Close, 9A, Vicious 1",
+          "Phaser Banks: Energy, Range Medium, 8A, Versatile 2",
+          "Photon Torpedoes: Torpedo, Range Long, 6A, High Yield",
+          "Tractor Beam: Strength 3"
+        ],
+        "Talents": [
+          "Rugged Design",
+          "Cloaking Device"
+        ]
+      },
+      {
+        "Name" : "K'Vort Bird of Prey",
+        "Faction": "Klingon",
+        "Systems": {
+          "Comms": 8,
+          "Engines": 9,
+          "Structure": 8,
+          "Computers": 8,
+          "Sensors": 8,
+          "Weapons": 10
+        },
+        "Departments": {
+          "Command": 2,
+          "Security": 4,
+          "Science": 1,
+          "Conn": 3,
+          "Engineering": 2,
+          "Medicine": 2
+        },
+        "Power": 9,
+        "Scale": 5,
+        "Shields": 12,
+        "Resistance": 5,
+        "Crew": "Talented: Atribute 10, Discipline 3",
+        "Atacks": [
+          "Disrupter Cannons: Energy, Range Close, 11A, Vicious 1",
+          "Photon Torpedoes: Torpedo, Range Long, 7A, High Yield",
+          "Tractor Beam: Strength 4"
+        ],
+        "Talents": [
+          "Rugged Design",
+          "Cloaking Device",
+          "Improved Reaction Control System"
+        ]
+      }
+  ]
+}

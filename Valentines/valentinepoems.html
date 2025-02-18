@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>💜 For Lila, my love 💜</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script>
+      const poems = [
+        "Health potions are red,\nmana potions are blue,\nbut no alchemy is needed,\nfor the magic I feel with you!",
+        "I would flare Atium,\nif you'll burn Iron too,\nso that you pull me closer,\nto a future I see with you.",
+        "I may not have many resources,\nnor able to fight or pick up a clue,\nbut I'd take the horror to lose my mind,\nbefore my heart could be taken from you.",
+        "I'd sing the Oath Unspeakable,\nI'd applaud at the end of Act Two,\nI'd dance in the Dim streets of Carcosa,\nFor just another moment with you.",
+        "For once in the forest,\nall have won their victories.\nThe Eyrie are preening up in their roosts,\nthe Vagabond, venturing into ruins old.\nThe cats are busy building in their Keep,\nthe mice revel in their liberation,\nand I am cuddled up holding you.",
+        "I would give away all my relics,\nand declare my ambition on Administration 2,\nbut I hope you don't need to score Empath,\nto feel the love I hold for you.",
+        "I don't want to wander the rainy Hong Kong streets,\nyearning endlessly as I drink my noodle stew,\nnor whisper my secrets to a hollow in a temple wall,\nso I'm so happy that I can whisper all my heart to you.",
+        "I'll overcome any Downpour or obstacle,\nor take the Reclaimers or oldest of Clickers,\nI will Face Your Fears and carve out a canoe,\nno matter my fatigue stack nor injuries too,\nif it means that I can range the Valley with you.",
+        "I can scout out all the finest flora,\nthe biggest of Bimbots and the most abundant nature,\nto calm a giant, Quiet lynx right down,\nand then share a cup of loose-leaf tea.\nYou know you never need a Harvest Crown,\nto score greatly when you connect with me.",
+        "I can't help but Dead Run and Stumble,\neven if it puts down my last clank cube,\nbut I'm just so hasty to get the best treasure,\nthe brightest gem of all, beautiful, wonderful you.",
+        "I'm told my Outie has amazing taste,\na love that threatens Kier's grace,\nbecause even a touch means all I want to do,\nis to quit Lumon and frolic with you.",
+        "I may be a Wee Joker,\nbut I can take red stake or blue,\nget Flush Fives and Eris,\nto take my love infinite with you.",
+        "Even in the face of evil oil demons,\nRomulan scheming and the Borg collective,\nto the final frontier I would boldly go,\nfor my continuing mission is to declare my love to you,\nand I will always endeavor to make it so.",
+        "Pit-lords and Hextech compete,\nwarring over the cities of Piltover and Zaun,\nbut wherever our hearts shall meet,\nis where the true magic of the Arcane will dawn.",
+        "I may not be a princess,\nheld by briars growing through my bone,\nbut I have found a love as true,\nas any fairytale could have known.",
+        "I'll peep my eaves, chew my bubblegum,\nand drink no water, only whiskey,\nand say hi to these intrepid heroes,\nthat came with my true love to me.",
+        "Untap, upkeep, then draw close to me,\nplay a land, then cast the Magic,\ndeclare all my love, hope it goes through to you,\nand then pass to you, that we may do it all again.",
+        "You've avoided all of NBN's traces, all of Jintek's traps\nand bested all the Weyland ICE that Haas Bioroid credits could buy,\nto use your last click to run on my heart,\nand stolen it back to be live victoriously with you.",
+        "I'd launch every project, pump up the heat,\nbreathe air and bring down the rains,\nbuild each city and grow all the greenery I could,\njust to have place on Mars to spend with you.",
+        "All these tarnished of the Shadow Lands,\nwander in the footsteps of Kindly Miqeulla,\nbut a far greater power holds my affection,\nand no Empyrean can take my love from Lila.\n(Destined Death be on those who try!)",
+        "I met a cleric of Shar,\nwho flew on a Nautiloid so far,\nshe had a little worm,\nand knew that I yearn,\nfor the love of a sorceress called Lila.",
+      ];
+
+      var currentPoem = Math.floor(Math.random() * poems.length);
+
+      function getRandomPoem() {
+        currentPoem = Math.floor(Math.random() * poems.length);
+        document.getElementById("poem").innerText = poems[currentPoem];
+      }
+
+      function getNextPoem() {
+        currentPoem = (currentPoem + 1) % poems.length;
+        document.getElementById("poem").innerText = poems[currentPoem];
+      }
+
+      function setup() {
+        noCanvas();
+        getRandomPoem();
+      }
+    </script>
+  </head>
+
+  <body onload="setup()" style="background-color: #4f0958">
+    <div class="jumbotron text-center" style="background-color: #7d88c2">
+      <h1>💜💜💜 For Lila, my love 💜💜💜</h1>
+      <h2 style="color: #4f1153">Poetry and Proclamations of Love</h2>
+      <h4>
+        For my dearest love Lila, by the Luckiest Duck in all the Pond, your
+        Zandra 🦆
+      </h4>
+    </div>
+    <div
+      class="container"
+      style="
+        margin-top: 10em;
+        background-color: #aabcd1;
+        border-radius: 10em;
+        border: 0.5em solid;
+        padding: 2em;
+        border-color: #06284e;
+      "
+      align="center"
+    >
+      <p style="font-size: large; font-weight: bold">
+        Click on the 💜 to get a random poem. Click on ➡️ to get the next one.
+      </p>
+      <button
+        id="heart"
+        onclick="getRandomPoem()"
+        style="
+          margin: 0.1em 0.5em;
+          font-size: 2em;
+          background-color: #9b5fa7;
+          border-radius: 0.5em;
+          border: 0.2em solid;
+          border-color: black;
+        "
+      >
+        💜
+      </button>
+      <button
+        id="arrow"
+        onclick="getNextPoem()"
+        style="
+          margin: 0.1em 0.5em;
+          font-size: 2em;
+          background-color: #9b5fa7;
+          border-radius: 0.5em;
+          border: 0.2em solid;
+          border-color: black;
+        "
+      >
+        ➡️
+      </button>
+      <br />
+      <br />
+
+      <div
+        id="poem"
+        style="
+          font-size: 2em;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+            'Lucida Sans', Arial, sans-serif;
+          font-weight: bold;
+          font-style: italic;
+        "
+      ></div>
+
+
+      <div style="margin-top: 2em; margin-left: 60%; margin-right: 10%; font: 1.5em sans-serif; font-weight: bold;">
+        <p >
+          I love you with all my heart. 💜
+        </p>
+        <p >
+        Zandra
+        </p>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
